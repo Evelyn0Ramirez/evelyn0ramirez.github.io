@@ -96,8 +96,8 @@
 }
 @media (max-width: 600px) {
   .contact-container {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
   }
 }
 
@@ -298,7 +298,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 10px;
   
 }
 
