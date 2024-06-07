@@ -89,6 +89,10 @@
       font-size: 40px; /* Increase the size of the hamburger icon */
       cursor: pointer;
   }
+
+    .contact-container {
+    width: 50%;
+}
 }
 
 /* Styling for Nav Bar/Side Bar small view - END */
