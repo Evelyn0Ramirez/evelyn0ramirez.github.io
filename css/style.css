@@ -291,6 +291,42 @@
 }
 /* Styling for Project Template - END */
 
+/* Styling for Resume Page - START */
+.resume-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 60px; /*change if the button gets cut off*/
+}
+.resume-container {
+  text-align: center;
+  width: 90%;
+  max-width: 800px;
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+/* Styling for Resume Page - END */
+
+/* Styling for About Me Page - START */
+.aboutme-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 60px; /*change if the button gets cut off*/
+}
+.aboutme-container {
+  text-align: center;
+  width: 90%;
+  max-width: 800px;
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+/* Styling for About Me Page - END */
+
 
 /* Styling for Contact Page - START */
 .contact-wrapper {
