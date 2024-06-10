@@ -77,7 +77,7 @@
 @media screen and (max-width: 768px) {
   .navbar {
       height: 50px; /* Make the navbar taller on small screens */
-      padding: 20px; /* Increase padding for better touch interaction */
+      padding: 20px; 
   }
 
   .navbar .nav-items {
@@ -98,6 +98,20 @@
   .contact-container {
     padding-left: 5px;
     padding-right: 5px;
+  }
+}
+
+@media (max-width: 600px) {
+  .project1 {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+  .project1 img {
+      width: 100%;
+      height: auto;
+  }
+  .project-description {
+      padding: 0;
   }
 }
 
@@ -180,40 +194,48 @@
 /* Styling for Buttons - START */
 
 /* Styling for Projects Page - START */
-.project-container {
-  margin-top: 40px;
-  margin-bottom: 20px;
-  margin-left: 60px;
-  margin-right: 60px;
-}
-.project {
+.project1-wrapper {
   display: flex;
-  margin-bottom: 20px;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 60px; /*change if the button gets cut off*/
 }
-.project img {
+.project1-container {
+  text-align: center;
+  width: 90%;
+  max-width: 800px;
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.project1 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 3px solid #ddd;
+}
+.project1 img {
+  max-width: 100%;
+  height: auto;
+}
+
+.project-description {
+  flex: 1;
+  padding: 10px;
+}
+
+.description-button {
+  margin-top: 10px;
+}
+/* 
+.project1 img {
   width: 150px;
   height: auto;
   margin-right: 40px;
-}
-.project-description {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-.description-button {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  position: relative;
-}
-.description-button p {
-  margin: 0;
-  flex-grow: 1;
-}
-.description-button .black-button {
-  position: absolute;
-  right: 60px; /* Adjust this value to move the button closer to the left */
-}
+} 
+
 /* Styling for Projects Page - END */
 
 
