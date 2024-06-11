@@ -73,7 +73,9 @@
   right: 25px;
   font-size: 24px;
 }
+/* Styling for Nav Bar/Side Bar small view - END */
 
+/* Styling for small screens - START */
 @media screen and (max-width: 768px) {
   .navbar {
       height: 50px; /* Make the navbar taller on small screens */
@@ -98,6 +100,8 @@
   .contact-container {
     padding-left: 5px;
     padding-right: 5px;
+    margin: 0;
+    box-sizing: border-box;
   }
 }
 
@@ -115,7 +119,7 @@
   }
 }
 
-/* Styling for Nav Bar/Side Bar small view - END */
+/* Styling for small screens - END */
 
 /* Styling for home body - START */
 .home-wrapper {
@@ -209,6 +213,12 @@
   border: 1px solid #ccc;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+.project1-container > p:first-of-type{
+  padding-bottom: 30px;
+  border-bottom: 3px solid #ddd;
+  
+}
+
 .project1 {
   display: flex;
   align-items: center;
@@ -216,6 +226,7 @@
   padding-bottom: 20px;
   border-bottom: 3px solid #ddd;
 }
+
 .project1 img {
   max-width: 100%;
   height: auto;
