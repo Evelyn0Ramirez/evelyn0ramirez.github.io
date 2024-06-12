@@ -2,6 +2,7 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: "Ubuntu", sans-serif;
 }
 
@@ -289,6 +290,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
   padding-bottom: 60px; /*change if the button gets cut off*/
 }
 .resume-container {
@@ -303,7 +307,8 @@
 
 .resume-container object{
   width: 100%;
-  height: 500px;
+  height: 500px; /*80vh*/
+  border: 1px solid #ccc;
 }
 /* Styling for Resume Page - END */
 
