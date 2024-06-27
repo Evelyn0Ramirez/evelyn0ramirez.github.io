@@ -97,7 +97,8 @@
     width: 50%;
   }
   .home-body img {
-    max-width: 60%; /* Adjust as needed for responsiveness */
+    /* max-width: 60%;  */
+    max-width: 85%; 
     height: auto;
   }
 }
@@ -121,7 +122,8 @@
       padding: 0;
   }
   .home-body img {
-    max-width: 80%; /* Adjust as needed for responsiveness */
+    /* max-width: 80%;  */
+    max-width: 95%; 
     height: auto;
   }
 }
