@@ -97,8 +97,9 @@
     width: 50%;
   }
   .home-body img {
-    max-width: 60%;
-    height: auto;
+    width: auto;
+    height: 60%;
+    object-fit: cover;
   }
 }
 
@@ -121,8 +122,9 @@
       padding: 0;
   }
   .home-body img {
-    max-width: 80%;
-    height: auto;
+    width: auto;
+    height: 50%;
+    object-fit: cover;
   }
 }
 
@@ -145,8 +147,9 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 .home-body img {
-  max-width: 40%;
+  width: auto;
   height: 70%;
+  object-fit: cover;
 }
 .home-body button {
   background-color: black;
