@@ -99,7 +99,7 @@
   .home-body img {
     max-width: 20%;
     height: 40%;
-    object-fit: cover;
+/*     object-fit: cover; */
   }
 }
 
@@ -124,7 +124,7 @@
   .home-body img {
     max-width: 30%;
     height: 50%;
-    object-fit: cover;
+/*     object-fit: cover; */
   }
 }
 
@@ -149,7 +149,7 @@
 .home-body img {
   max-width: 40%;
   height: 70%;
-  object-fit: cover;
+/*   object-fit: cover; */
 }
 .home-body button {
   background-color: black;
