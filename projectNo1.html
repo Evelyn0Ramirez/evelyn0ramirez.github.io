@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
-    <meta name="viewport" content="with=device-width, initial-scale=1, user-scalable=no"> 
+    <meta name="viewport" content="with=device-width, initial-scale=1, user-scalable=no">
     <title>Project #1</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- Google Fonts-->
@@ -19,61 +20,174 @@
     <div class="navbar">
         <span class="menu" onclick="openNav()"><i class="fas fa-bars"></i> </span>
         <ul class="nav-items">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="resume.html">Resume</a></li>
-          <li><a href="aboutme.html">About Me</a></li>
-          <li><a href="contact.html">Contact</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="aboutme.html">About Me</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
-      </div>
-      
-      <div id="mySidebar" class="sidebar">
+    </div>
+
+    <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fas fa-times"></i></a>
         <a href="index.html">Home</a>
         <a href="projects.html">Projects</a>
         <a href="resume.html">Resume</a>
         <a href="aboutme.html">About Me</a>
         <a href="contact.html">Contact</a>
-      </div>
+    </div>
 
-      <div class="project-wrapper">
+    <div class="project-wrapper">
         <div class="project-template">
-            <h1>Project #1</h1> </br>
-            <p>As an Intern for Delete the Divide I had the opportunity to work with LA County's Internal Services Departments(ISD) 
-              Enterprise Performance & Accountability(EPA) division. I created dynamic data visualizations for various projects.</p></br>
-            <p>For my very first project with EPA I was tasked with creating estimate dashboards to uncover insights regarding performance.</p></br>
-            <p>*Please note that although the data used was synthetic, it is still subjected to confidentiality. 
-              It is intended for internal use only and should not be shared with individuals outside the organization without prior authorization.
-              As a result, I will refrain from presenting visible detailed numerical results. Instead, I will concentrate on my overall process 
-              in creating the dashboards.*</p> </br>
+            <h1>Estimate Dashboards</h1> </br>
+            <p>As an Intern for Delete the Divide I had the opportunity to work with LA County's Internal Services
+                Departments(ISD)
+                Enterprise Performance & Accountability(EPA) division where I created dynamic data visualizations for
+                various divisions within ISD.</p></br>
+            <p>For my very first project with EPA I was tasked with creating a progress tracking and status dashboard
+                from estimate data provided by
+                Maintenence and Operations(M&O) to uncover insights regarding performance.</p></br>
+            <p>*Please note that the data used is intended for internal use only and should not be shared with
+                individuals outside the organization
+                without prior authorization. As a result, I will refrain from presenting actual results derived from the
+                data and instead I will
+                concentrate on my overall process in designing and creating the dashboards.*</p> </br>
             <div class="project-process">
-              <h4>Objective:</h4>
-              <h4>Key Metrics and KPIs:</h4>
-              <h4>Data Collection:</h4>
-              <h4>Data Connection:</h4>
-              <h4>Data Modeling:</h4>
-              <h4>Designing the Dashboards:</h4>
-              <h4>Adding Interactivity:</h4>
-              <h4>Review:</h4>
-              <h4>Publishing:</h4>
-          </div>
-            <!-- Count and percentage of Incomplete/Complete estimates, Average Age of Incomplete/Complete estimates  -->
-            <img src="assets/images/placeholder_img.jpg" alt="This is a Photo"></br></br>
-            <p>This is a paragraph blah blah blah. This is a paragraph blah blah blah. This is a paragraph blah blah blah.
-                This is a paragraph blah blah blah. This is a paragraph blah blah blah. This is a paragraph blah blah blah.
-                This is a paragraph blah blah blah. This is a paragraph blah blah blah. This is a paragraph blah blah blah.</p>
+                <h4>Objective:</h4>
+                <p>In this tracking progress and status analysis the aim is to calculate and report the average age and
+                    status of tasks. This is important
+                    as we want to gain a comprehensive view of our efficiency so that we can make informed decisions to
+                    optomize workflow.</p>
+                <h4>Key Metrics and KPIs:</h4>
+                <div class="project-column-list">
+                    <ul>
+                        <li>Average Age of Complete Estimates</li>
+                        <li>Average Age of In Progress Estimates</li>
+                        <li># of Closed Estimates</li>
+                        <li># of Open Estimates</li>
+                        <li>Total Percent Closed</li>
+                        <li>Total Percent Open</li>
+                    </ul>
+                </div>
+                <h4>Data Collection:</h4>
+                <p>The data was provided by M&O through an Excel Spreadsheet. The data was cleaned using Excel's various
+                    built-in functions and features. Errors were fixed such as duplicates and missing values using conditional 
+                    formatting and functions such as COUNTBLANK() and ISBLANK().</p>
+                <h4>Data Connection:</h4>
+                <p>Imported the Excel Spreadsheet into Power BI and small scale data transformation was done to verify
+                    once more that the data is ready to use. Another seperate Excel Spreadsheet imported into Power BI 
+                    was a file containing federal holidays.
+                </p>
+                <h4>Data Modeling:</h4>
+                <div class="project-list">
+                    <ul>
+                        <li>Created a calendar table that contains dates using DAX. The calculation used a self-decided
+                            start date and an end date set to the latest present date.</li>
+                        <li>Date hierarchy was adjusted to accommodate our desired fiscal year which starts in July as 
+                            opposed to the default value January. This allowed us to drill down the hierarchy more accurately 
+                            (Year -> Quarter -> Month -> Day).</li>
+                        <li>Relationships were created between the calendar table on the date field and the dateEstimateRequestRecieved field of 
+                            the estimate data table.</li>
+                        <li>Utilized DAX functions to add new columns that calculate the days between two dates using DATEDIFF(), and subsequently 
+                            created measures based on these columns. These measures were then used for further calculations incorporating conditional 
+                            logic. Specifically, I calculated the duration between a start date and an end date to provide a complete estimate, and 
+                            determines the age of an estimate by measuring how many days have passed since the day an estimate request was received 
+                            up to today, indicating how long a task has been pending.</li>
+                    </ul>
+                </div>
+                <div class="gallery-container">
+                    <div class="image-wrapper">
+                      <img src="assets/images/projectNo1/calendarCalculation_proj1.png" alt="Calculation to create a calendar table.">
+                      <div class="image-description">How I created a calendar table using DAX.</div>
+                    </div>
+                    <div class="image-wrapper">
+                        <img src="assets/images/projectNo1/fiscalYearRelationship_proj1.png" alt="Relationship created on Model View in Power BI." id="image-scaledown-1">
+                        <div class="image-description">In Model View I created a relationship between the Date field of my Fiscal Year table and the 
+                            dateEstimateRequestRecieved field 
+                            of estimate data table.</div>
+                      </div>
+                    <div class="image-wrapper">
+                        <img src="assets/images/projectNo1/datediffCalculations.png" alt="Calculations using DATEDIFF()." id="image-scaleup-1">
+                        <div class="image-description">DAX function to calculated the cycle time to complete an estimate and the age of an 
+                            estimate to determine how long a task has been pending.</div>
+                      </div>
+                      <p>*Hover over an image to view it's attached description (Desktop only). </br></br>
+                        *Select an image to open in a new tab to inspect further.</p>
+                </div>
+                <h4>Designing the Dashboards:</h4>
+                <div class="project-list">
+                    <ul>
+                        <li>Developed a visual that represents each KPI and metric that I was tasked with. I utilized card and matrix 
+                            visuals that were customized using a variety of formatting options.</li>
+                        <li>Created a header with ISD's colors and official logo using shapes and the grouped them together in the selection pane. 
+                            Grouping these elements ensures easier management and consistent positioning.</li>
+                        <li>The layer order was adjusted to guarantee that certain elements would not bocker other elements. For example, 
+                            the header would be set as the topmost layer. This enhances the overall visual coherence.</li>
+                    </ul>
+                </div>
+                <div class="gallery-container">
+                    <div class="image-wrapper">
+                      <img src="assets/images/projectNo1/selectionTab_proj1.png" alt="Selection pane showing grouped elements." id="image-scaledown-1">
+                      <div class="image-description">Selection pane where I grouped elements and aranged the layer order.</div>
+                    </div>
+                    <!-- <p>*Select an image to enlarge, re-select to minimize</p> -->
+                    <p>*Hover over an image to view it's attached description (Desktop only). </br></br>*Select an image to open in a new tab to inspect further.</p>
+                </div>
+                <h4>Adding Interactivity:</h4>
+                <div class="project-list">
+                    <ul>
+                        <li>Developed a visual that represents each KPI and metric that I was tasked with. I utilized card and matrix 
+                            visuals that were customized using a variety of formatting options.</li>
+                        <li>Added filters to certain visuals through the Filters pane. Advance filtering on the visuals for where the calculation Complete Estimate is greater than 0 
+                            and for when the field dateestimateassignedforworkcompletion is not blank. We want to soley focus on meaningful data and to avoid misleading 
+                            visualizations.</li>
+                        <li>Added slicers to dynamically filter data, including options for fiscal year and craft. We can drill down into the year slicer to view data 
+                            at the quarter and month levels.</li>
+                        <li>Implemented dynamic headers and titles that update based on selections made in the available slicers. This enhances clarity and presentation as it helps users understand 
+                            what data they are looking at and demonstrates attention to detail and usability.</li>
+                    </ul>
+                </div>
+                <div class="gallery-container">
+                    <div class="image-wrapper">
+                        <img src="assets/images/projectNo1/filtersPane_proj1.png" alt="Filter pane for advanced filtering." id="image-scaledown-1">
+                        <div class="image-description">Filter pane where advance filtering was done on the matrices to avoid misleading results.</div>
+                      </div>
+                    <div class="image-wrapper">
+                        <img src="assets/images/projectNo1/HeirarchySlicer_proj1.jpg" alt="Year slicer showcasing the change in date hierarchy." id="image-scaledown-1">
+                        <div class="image-description">Year slicer showcasing the change in date hierarchy. The fiscal year starts in July as opposed to the default January.</div>
+                      </div>
+                    <div class="image-wrapper">
+                        <img src="assets/images/projectNo1/dynamicVisualTitle_proj1.png" alt="Dynamic title code snippit.">
+                        <div class="image-description">A code snippit of how dynmaic titles were implemented on a visual.</div>
+                      </div>
+                      <div class="image-wrapper">
+                        <img src="assets/images/projectNo1/dynamicVisualTitleDemo_proj1.png" alt="Dynamic header that changes depending on slicers.">
+                        <div class="image-description">The visual titles change depending on the craft slicers due to the dynamic titles implemented. Single and multiple selections allowed.</div>
+                      </div>
+                      <div class="image-wrapper">
+                        <img src="assets/images/projectNo1/dynamicHeadingDemo_proj1.png" alt="Dynamic header that changes depending on slicers.">
+                        <div class="image-description">The dashboard headers change depending on the year, quarter, and craft slicers due to the dynamic headers implemented. Single and multiple selections allowed.</div>
+                      </div>
+                    <!-- <p>*Select an image to enlarge, re-select to minimize</p> -->
+                    <p>*Hover over an image to view it's attached description (Desktop only). </br></br>*Select an image to open in a new tab to inspect further.</p>
+                </div>
+                <h4>Review:</h4>
+                <p>Daily exchanges of emails and conversations occurred with the full-time team member whom I was shadowing. As I received guidance and learned from 
+                    their expertise, I developed my own skills and gained confidence in working on these dashboards independently. It was because of this confidence 
+                    that I began to research and implement features that I personally found would elevate the dashboards.</p>
+                <h4>Publishing:</h4>
+                <p>Was it published? YES! <i class="fa-regular fa-face-smile-beam"></i></p></br>
+            </div>
             <button class="black-button" onclick="window.location.href='projects.html'">Return to Projects</button>
         </div>
     </div>
 
     <div class="footer">
-      <a href=mailto:<evelyn0ramirez@gmail.com class="far fa-envelope-open" alt="Email"> </a>
-      <a href="https://www.linkedin.com/in/evelyn-ramirez-computer-science" class="fa-brands fa-linkedin-in" alt="LinkedIn"> </a>
-      <a href="https://github.com/Evelyn0Ramirez" class="fa-brands fa-github" alt="GitHub"> </a>
+        <a href=mailto:<evelyn0ramirez@gmail.com class="far fa-envelope-open" alt="Email"> </a>
+        <a href="https://www.linkedin.com/in/evelyn-ramirez-computer-science" class="fa-brands fa-linkedin-in"
+            alt="LinkedIn"> </a>
+        <a href="https://github.com/Evelyn0Ramirez" class="fa-brands fa-github" alt="GitHub"> </a>
     </div>
-      
-      <script src="assets/js/scripts.js"></script>
 
-</body>
+    <script src="assets/js/scripts.js"></script>
 
-</html>
