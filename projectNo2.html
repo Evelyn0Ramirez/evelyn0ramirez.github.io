@@ -38,20 +38,111 @@
 
       <div class="project-wrapper">
         <div class="project-template">
-            <h1>Project #2</h1> </br>
-            <p>This is a paragraph blah blah blah. This is a paragraph blah blah blah. This is a paragraph blah blah blah.
-                This is a paragraph blah blah blah. This is a paragraph blah blah blah. This is a paragraph blah blah blah.
-                This is a paragraph blah blah blah. This is a paragraph blah blah blah. This is a paragraph blah blah blah.
-                This is a paragraph blah blah blah. This is a paragraph blah blah blah. This is a paragraph blah blah blah.</p></br>
-            <img src="assets/images/placeholder_img.jpg" alt="This is a Photo"></br></br>
-            <p>This is a paragraph blah blah blah. This is a paragraph blah blah blah. This is a paragraph blah blah blah.
-                This is a paragraph blah blah blah. This is a paragraph blah blah blah. This is a paragraph blah blah blah.
-                This is a paragraph blah blah blah. This is a paragraph blah blah blah. This is a paragraph blah blah blah.</p>
-                <img src="assets/images/placeholder_img.jpg" alt="This is a Photo"></br></br>
-                <p>This is a paragraph blah blah blah. This is a paragraph blah blah blah. This is a paragraph blah blah blah.
-                    This is a paragraph blah blah blah. This is a paragraph blah blah blah. This is a paragraph blah blah blah.
-                    This is a paragraph blah blah blah. This is a paragraph blah blah blah. This is a paragraph blah blah blah.</p>
-                    <img src="assets/images/placeholder_img.jpg" alt="This is a Photo"></br></br>
+            <h1>Audit Dashboards</h1> </br>
+            <p>As an Intern for Delete the Divide I had the opportunity to work with LA County's Internal Services Departments(ISD) 
+              Enterprise Performance & Accountability(EPA) division where I created dynamic data visualizations for various division within ISD.</p></br>
+            <p>For my second project with EPA I was tasked with creating dashboards that analyze cycle times provided by the audit team. 
+              Due to insufficient data, it was decided that the best course of action would be to create synthetic sample data to work with til sufficient 
+              data was recorded. Half of the data was created using ChatGPT and the rest was provided by the audit team.</p></br>
+            <p>*Please note that although the data used was synthetic, it is still subjected to confidentiality. 
+              It is intended for internal use only and should not be shared with individuals outside the organization without prior authorization.
+              As a result, I will refrain from presenting actual results derived from the data and instead I will concentrate on my overall process 
+              in designing and creating the dashboards.*</p> </br>
+              <div class="project-process">
+                <h4>Objective:</h4>
+                <p>The objective of these dashboards is to provide an overview of the audit process timeline and identify any bottlenecks within the process for 
+                  3 seperate types of audits. We want to highlight where in the audit process, information collection, and passing of the information is delayed. 
+                  This is important as we want to faciliate better communication and ensure that all audits are completed within a reasonable timeframe.
+                </p>
+                <h4>Key Metrics and KPIs:</h4>
+                <div class="project-column-list">
+                  <ul>
+                      <li>Number of Incidents</li>
+                      <li>Average Cycle Time to Complete Audit</li>
+                      <li>% Response Time to Target</li>
+                      <li>Average Response Time</li>
+                      <li>Various Average Cycle Times for X to Receive/Respond from Y.</li>
+                  </ul>
+              </div>
+                <h4>Data Collection & Preprocessing:</h4>
+                <p>Synthetic data was partially created using ChatGPT as well as provided by the audit team. The synthetic data consisted of records for 3 seperate 
+                  types of audits. The data was than merged onto an Excel Spreadsheet and prepared for import into power BI. The data was cleaned and transformed to 
+                  remove any mistakes and inaccuracies. For example, missing values, duplicates, inconsistent data formats, chronologically inconsistent dates, etc. 
+                  Preprocessing of the data was done to ensure data consistency, completeness, and quality.</p>
+                <h4>Data Connection:</h4>
+                <p>Imported the Excel Spreadsheet into Power BI and small scale data transformation was done to verify once more that the data is ready to use.
+                  Another seperate Excel Spreadsheet imported into Power BI was a file containing federal holidays.
+                </p>
+                <h4>Data Modeling:</h4>
+                <div class="project-list">
+                  <ul>
+                      <li>Created a calendar table that contains dates using DAX. The calculation used a self-decided start date and an end date set 
+                        to the latest present date.</li>
+                      <li>Date hierarchy was adjusted to accommodate our desired fiscal year which starts in July as opposed to the default value January. 
+                        This allowed us to drill down the hierarchy more accurately (Year -> Quarter -> Month -> Day).</li>
+                      <li>Relationships were created between the calendar table on the date field and the start date field of the 3 separate audit types.</li>
+                      <li>Used DAX functions to add new columns that calculate cycle times as well as to create measures with those new columns to make further 
+                        calculations with conditional DAX Functions.</li>
+                    </ul>
+              </div>
+              <div class="gallery-container">
+                <div class="image-wrapper">
+                  <img src="assets/images/calendarTable.png" alt="Calculation to create calendar table using DAX.">
+                  <div class="image-description">How I created a calendar table using DAX.</div>
+                </div>
+                <div class="image-wrapper">
+                  <img src="assets/images/fiscalYearRelationship_proj2.png" alt="Relationship created on Model View in Power BI, connecting all 3 audit types. ">
+                  <div class="image-description">In Model View I created a relationship between the Date field of my Fiscal Year table and the Start Date field 
+                    of each of the 3 Audit type tables.</div>
+                </div>
+                <div class="image-wrapper">
+                  <img src="assets/images/cycleTimeDAX.png" alt="DAX function used to calculate cycle times.">
+                  <div class="image-description">DAX function that returns the number of whole workdays between two date. 
+                    1 indicates the days of the week that are considered weekend days so, omit Saturdays and Sundays. 
+                    Holidays represents a column table of one or more dates that are to be excluded from the working day calendar. </div>
+                </div>
+                <!-- <p>*Select an image to enlarge, re-select to minimize</p> -->
+                <p>*Hover over an image to view it's attached description (Desktop only). </br></br>*Select an image to open in a new tab to inspect further.</p>
+              </div>
+                        
+                <h4>Designing the Dashboards:</h4>
+                <div class="project-list">
+                  <ul>
+                      <li>I developed a visual that represents each KPI and metric that I was tasked with. I utilized various visuals such as cards, matrices, 
+                        clustered column charts, and line and stacked column charts. These visuals were customized using a variety of formatting options.</li>
+                      <li>I applied ISD branding elements consistently throughout the dashboards, including using the correct color palette for visual 
+                        elements such as charts and headers, and ensuring appropriate placement of these elements.</li>
+                      <li>Worked on visual placements to standardize sizes and alignment, minimizing whitespace and enhancing overall visual coherence.</li>
+                      <li>Incorporated a caveats page to ensuring transparency and clarity in data interpretation.</li>
+                  </ul>
+              </div>
+                <h4>Adding Interactivity:</h4>
+                <div class="project-list">
+                  <ul>
+                      <li>Added filters through the Filters pane to each visual to ensure that the end date of each record of the specific cycle field selected are not blank. 
+                        Want to exclude records where the end date is blank and use only valid records for better visual representation and accuracy.</li>
+                      <li>Added slicers to dynamically filter data, including options for fiscal year, assessable unit, assigned audit member, and external auditor name.</li>
+                      <li>I designed multiple tooltips using shapes and formatted them to meet my specific needs such as text, size, color, and other elements. 
+                        A tooltip was then added to each visual to provide an explanation of which columns were used for each calculation. This provides clarity 
+                        and is the most efficient way for a user to access this information and confirm it's accuracy. Tooltips were then hidden and only 
+                        accessed in the editing mode.</li>
+                 </ul>
+              </div>
+              <div class="gallery-container">
+                <div class="image-wrapper">
+                  <img src="assets/images/hiddenTooltips_proj2.png" alt="Hidden tooltips for each individual visual.">
+                  <div class="image-description">A separate tooltip was created for each visual and hidden from the user when in viewing mode for a cleaner look.</div>
+                </div>
+                <!-- <p>*Select an image to enlarge, re-select to minimize</p> -->
+                <p>*Hover over an image to view it's attached description (Desktop only). </br></br>*Select an image to open in a new tab to inspect further.</p>
+              </div>
+                <h4>Review:</h4>
+                <p>Weekly meetings with the audit team where held to showcase the latest version of the dashboards and to recieve feedback. Refining the visuals to ensure both readablity 
+                  and usability for end-users was extremly important.</p>
+                <h4>Publishing:</h4>
+                <p>Was it published? YES! <i class="fa-regular fa-face-smile-beam"></i></p></br>
+                
+            </div>
             <button class="black-button" onclick="window.location.href='projects.html'">Return to Projects</button>
         </div>
     </div>
