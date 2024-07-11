@@ -7,7 +7,7 @@
     document.getElementById("mySidebar").style.width = "0";
   }
 
-//Image enlarge
+//Image open image in new tab
 document.querySelectorAll('.gallery-container img').forEach(image => {
     image.addEventListener('click', () => {
     //   image.classList.toggle('enlarged');
