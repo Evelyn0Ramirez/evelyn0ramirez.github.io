@@ -7,13 +7,34 @@
     document.getElementById("mySidebar").style.width = "0";
   }
 
-//Image open image in new tab
-document.querySelectorAll('.gallery-container img').forEach(image => {
+//Enlarge image
+// document.querySelectorAll('.gallery-container img').forEach(image => {
+//     image.addEventListener('click', () => {
+//       image.classList.toggle('enlarged');
+//     });
+//   });
+
+//Open image in new tab; checks screen size so only on desktop
+  document.querySelectorAll('.image-wrapper img').forEach(image => {
     image.addEventListener('click', () => {
-    //   image.classList.toggle('enlarged');
-      window.open(image.src, '_blank');
+        if (window.innerWidth > 768) {  
+            window.open(image.src, '_blank');
+        }
     });
-  });
+});
+
+window.addEventListener('resize', () => {
+    document.querySelectorAll('.image-wrapper img').forEach(image => {
+        image.removeEventListener('click', openImageInNewTab);
+        if (window.innerWidth > 768) {
+            image.addEventListener('click', openImageInNewTab);
+        }
+    });
+});
+
+function openImageInNewTab(event) {
+    window.open(event.target.src, '_blank');
+}
 
   // Overlay notice
   document.addEventListener("DOMContentLoaded", function() {
