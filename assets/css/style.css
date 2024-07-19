@@ -495,8 +495,8 @@ z-index: 1;
   background-color: #333;
 }
 
-#page-num, #page-count{
-  color: transparent;
+#page-num, #page-count {
+  color: black; 
   border: 1px solid black;
   padding: 5px 15px;
   margin-right: 10px;
@@ -505,9 +505,8 @@ z-index: 1;
   text-decoration: none;
   cursor: pointer;
   border-radius: 4px;
+  background-color: white; 
 }
-
-
 /* Styling for Resume Page - END */
 
 /* Styling for About Me Page - START */
