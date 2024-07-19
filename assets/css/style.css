@@ -438,16 +438,16 @@ border: 1px solid #ccc;
 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-iframe {
+/* iframe {
 width: 100%;
-height: 700px; /*80vh*/
+height: 700px;
 border: 1px solid #ccc;
 z-index: 1;
-}
+} */
 
 #pdf-viewer-container {
   width: 100%;
-  height: 80vh;
+  height: 80vh; 
   position: relative;
 }
 
@@ -460,6 +460,51 @@ z-index: 1;
 .pdf-navigation {
   text-align: center;
   margin-top: 10px;
+}
+
+#next-page{
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+#next-page button:hover {
+  background-color: #333;
+}
+
+#prev-page {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+    
+#prev-page button:hover {
+  background-color: #333;
+}
+
+#page-num, #page-count{
+  color: white;
+  border: 1px solid black;
+  padding: 5px 15px;
+  margin-right: 10px;
+  margin-left: 10px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 4px;
 }
 
 

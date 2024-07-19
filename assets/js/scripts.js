@@ -63,7 +63,7 @@ let pdfDoc = null,
     pageNum = 1,
     pageRendering = false,
     pageNumPending = null,
-    scale = 1.5,
+    scale = 1.0,
     canvas = document.getElementById('pdf-canvas'),
     ctx = canvas.getContext('2d');
 
@@ -82,12 +82,21 @@ function renderPage(num) {
 
   pdfDoc.getPage(num).then(function(page) {
     const viewport = page.getViewport({ scale: scale });
-    canvas.height = viewport.height;
-    canvas.width = viewport.width;
+    const container = document.getElementById('pdf-viewer-container');
+    const containerWidth = container.clientWidth;
+    const containerHeight = container.clientHeight;
+
+    // Calculate scale to fit the canvas within the container
+    const scaleWidth = containerWidth / viewport.width;
+    const scaleHeight = containerHeight / viewport.height;
+    const scaleToFit = Math.min(scaleWidth, scaleHeight);
+
+    canvas.width = viewport.width * scaleToFit;
+    canvas.height = viewport.height * scaleToFit;
 
     const renderContext = {
       canvasContext: ctx,
-      viewport: viewport
+      viewport: page.getViewport({ scale: scaleToFit })
     };
     const renderTask = page.render(renderContext);
 
@@ -131,4 +140,8 @@ document.getElementById('next-page').addEventListener('click', function() {
   queueRenderPage(pageNum);
 });
 
+// Handle window resize - re-render
+window.addEventListener('resize', function() {
+  renderPage(pageNum); 
+});
 
