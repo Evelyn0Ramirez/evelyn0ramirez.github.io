@@ -505,7 +505,6 @@ z-index: 1;
   text-decoration: none;
   cursor: pointer;
   border-radius: 4px;
-  background-color: white; 
   position: relative; 
   z-index: 10;
 }
