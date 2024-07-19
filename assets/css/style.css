@@ -8,14 +8,18 @@
 
 /* Styling for Nav Bar desktop view - START */
 .navbar {
-display: flex;
-justify-content: center;
-align-items: center;
-position: relative;
-background-color: #333;
-padding: 14px 20px;
-color: white;
-}
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  background-color: #333;
+  padding: 14px 20px;
+  color: white;
+  z-index: 1001; 
+  }
 
 .navbar .menu {
 position: absolute; 
@@ -53,7 +57,7 @@ background-color: #333;
 overflow-x: hidden;
 transition: 0.5s;
 padding-top: 60px;
-z-index: 100;
+z-index: 10001;
 }
 
 .sidebar a {
@@ -149,6 +153,7 @@ font-size: 24px;
 display: flex;
 justify-content: center;
 align-items: center;
+padding-top: 80px;
 padding-bottom: 60px; /*change if the button gets cut off*/
 }
 .home-body {
@@ -228,6 +233,7 @@ background-color: #333;
 display: flex;
 justify-content: center;
 align-items: center;
+padding-top: 80px;
 padding-bottom: 60px; /*change if the button gets cut off*/
 }
 .project1-container {
@@ -282,6 +288,7 @@ margin-right: 40px;
 display: flex;
 justify-content: center;
 align-items: center;
+padding-top: 80px;
 padding-bottom: 60px; /*change if the button gets cut off*/
 }
 .project-template {
@@ -418,6 +425,7 @@ align-items: center;
 flex-direction: column;
 height: 100%;
 box-sizing: border-box;
+padding-top: 80px;
 padding-bottom: 60px; /*change if the button gets cut off*/
 }
 .resume-container {
@@ -443,6 +451,7 @@ z-index: 1;
 display: flex;
 justify-content: center;
 align-items: center;
+padding-top: 80px;
 padding-bottom: 60px; /*change if the button gets cut off*/
 }
 .aboutme-container {
@@ -468,7 +477,7 @@ padding: 10px;
 
 .contact-container {
 max-width: 800px;
-margin-top: 100px;
+margin-top: 90px;
 margin-bottom: 20px;  
 padding-top: 20px;
 padding-left: 40px;
