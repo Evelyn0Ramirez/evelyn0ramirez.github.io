@@ -496,7 +496,7 @@ z-index: 1;
 }
 
 #page-num, #page-count{
-  color: white;
+  color: transparent;
   border: 1px solid black;
   padding: 5px 15px;
   margin-right: 10px;

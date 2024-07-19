@@ -60,88 +60,159 @@ function openImageInNewTab(event) {
 const url = 'assets/docs/EvelynRamirez_Resume.pdf';
 
 let pdfDoc = null,
-    pageNum = 1,
-    pageRendering = false,
-    pageNumPending = null,
-    scale = 1.0,
-    canvas = document.getElementById('pdf-canvas'),
-    ctx = canvas.getContext('2d');
+        pageNum = 1,
+        pageRendering = false,
+        pageNumPending = null,
+        scale = 1.5,
+        canvas = document.getElementById('pdf-canvas'),
+        ctx = canvas.getContext('2d');
 
-pdfjsLib.getDocument(url).promise
-  .then(function(pdfDoc_) {
-    pdfDoc = pdfDoc_;
-    document.getElementById('page-count').textContent = pdfDoc.numPages;
-    renderPage(pageNum);
-  })
-  .catch(function(error) {
-    console.error('Error loading PDF:', error);
-  });
+    pdfjsLib.getDocument(url).promise
+      .then(function(pdfDoc_) {
+        pdfDoc = pdfDoc_;
+        document.getElementById('page-count').textContent = pdfDoc.numPages;
+        renderPage(pageNum);
+      })
+      .catch(function(error) {
+        console.error('Error loading PDF:', error);
+      });
 
-function renderPage(num) {
-  pageRendering = true;
+    function renderPage(num) {
+      pageRendering = true;
+      pdfDoc.getPage(num).then(function(page) {
+        const viewport = page.getViewport({ scale: scale });
+        canvas.height = viewport.height;
+        canvas.width = viewport.width;
 
-  pdfDoc.getPage(num).then(function(page) {
-    const viewport = page.getViewport({ scale: scale });
-    const container = document.getElementById('pdf-viewer-container');
-    const containerWidth = container.clientWidth;
-    const containerHeight = container.clientHeight;
+        const renderContext = {
+          canvasContext: ctx,
+          viewport: viewport
+        };
+        const renderTask = page.render(renderContext);
 
-    // Calculate scale to fit the canvas within the container
-    const scaleWidth = containerWidth / viewport.width;
-    const scaleHeight = containerHeight / viewport.height;
-    const scaleToFit = Math.min(scaleWidth, scaleHeight);
+        renderTask.promise.then(function() {
+          pageRendering = false;
+          if (pageNumPending !== null) {
+            renderPage(pageNumPending);
+            pageNumPending = null;
+          }
+        }).catch(function(error) {
+          console.error('Error rendering page:', error);
+        });
+      }).catch(function(error) {
+        console.error('Error getting page:', error);
+      });
 
-    canvas.width = viewport.width * scaleToFit;
-    canvas.height = viewport.height * scaleToFit;
+      document.getElementById('page-num').textContent = num;
+    }
 
-    const renderContext = {
-      canvasContext: ctx,
-      viewport: page.getViewport({ scale: scaleToFit })
-    };
-    const renderTask = page.render(renderContext);
-
-    renderTask.promise.then(function() {
-      pageRendering = false;
-      if (pageNumPending !== null) {
-        renderPage(pageNumPending);
-        pageNumPending = null;
+    function queueRenderPage(num) {
+      if (pageRendering) {
+        pageNumPending = num;
+      } else {
+        renderPage(num);
       }
-    }).catch(function(error) {
-      console.error('Error rendering page:', error);
+    }
+
+    document.getElementById('prev-page').addEventListener('click', function() {
+      if (pageNum <= 1) {
+        return;
+      }
+      pageNum--;
+      queueRenderPage(pageNum);
     });
-  }).catch(function(error) {
-    console.error('Error getting page:', error);
-  });
 
-  document.getElementById('page-num').textContent = num;
-}
+    document.getElementById('next-page').addEventListener('click', function() {
+      if (pageNum >= pdfDoc.numPages) {
+        return;
+      }
+      pageNum++;
+      queueRenderPage(pageNum);
+    });
 
-function queueRenderPage(num) {
-  if (pageRendering) {
-    pageNumPending = num;
-  } else {
-    renderPage(num);
-  }
-}
+// let pdfDoc = null,
+//     pageNum = 1,
+//     pageRendering = false,
+//     pageNumPending = null,
+//     scale = 1.0,
+//     canvas = document.getElementById('pdf-canvas'),
+//     ctx = canvas.getContext('2d');
 
-document.getElementById('prev-page').addEventListener('click', function() {
-  if (pageNum <= 1) {
-    return;
-  }
-  pageNum--;
-  queueRenderPage(pageNum);
-});
+// pdfjsLib.getDocument(url).promise
+//   .then(function(pdfDoc_) {
+//     pdfDoc = pdfDoc_;
+//     document.getElementById('page-count').textContent = pdfDoc.numPages;
+//     renderPage(pageNum);
+//   })
+//   .catch(function(error) {
+//     console.error('Error loading PDF:', error);
+//   });
 
-document.getElementById('next-page').addEventListener('click', function() {
-  if (pageNum >= pdfDoc.numPages) {
-    return;
-  }
-  pageNum++;
-  queueRenderPage(pageNum);
-});
+// function renderPage(num) {
+//   pageRendering = true;
 
-// Handle window resize - re-render
-window.addEventListener('resize', function() {
-  renderPage(pageNum); 
-});
+//   pdfDoc.getPage(num).then(function(page) {
+//     const viewport = page.getViewport({ scale: scale });
+//     const container = document.getElementById('pdf-viewer-container');
+//     const containerWidth = container.clientWidth;
+//     const containerHeight = container.clientHeight;
+
+//     // Calculate scale to fit the canvas within the container
+//     const scaleWidth = containerWidth / viewport.width;
+//     const scaleHeight = containerHeight / viewport.height;
+//     const scaleToFit = Math.min(scaleWidth, scaleHeight);
+
+//     canvas.width = viewport.width * scaleToFit;
+//     canvas.height = viewport.height * scaleToFit;
+
+//     const renderContext = {
+//       canvasContext: ctx,
+//       viewport: page.getViewport({ scale: scaleToFit })
+//     };
+//     const renderTask = page.render(renderContext);
+
+//     renderTask.promise.then(function() {
+//       pageRendering = false;
+//       if (pageNumPending !== null) {
+//         renderPage(pageNumPending);
+//         pageNumPending = null;
+//       }
+//     }).catch(function(error) {
+//       console.error('Error rendering page:', error);
+//     });
+//   }).catch(function(error) {
+//     console.error('Error getting page:', error);
+//   });
+
+//   document.getElementById('page-num').textContent = num;
+// }
+
+// function queueRenderPage(num) {
+//   if (pageRendering) {
+//     pageNumPending = num;
+//   } else {
+//     renderPage(num);
+//   }
+// }
+
+// document.getElementById('prev-page').addEventListener('click', function() {
+//   if (pageNum <= 1) {
+//     return;
+//   }
+//   pageNum--;
+//   queueRenderPage(pageNum);
+// });
+
+// document.getElementById('next-page').addEventListener('click', function() {
+//   if (pageNum >= pdfDoc.numPages) {
+//     return;
+//   }
+//   pageNum++;
+//   queueRenderPage(pageNum);
+// });
+
+// // Handle window resize - re-render
+// window.addEventListener('resize', function() {
+//   renderPage(pageNum); 
+// });
 
