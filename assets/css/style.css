@@ -1,268 +1,268 @@
 /* Properties for entire page */
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Ubuntu", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
 }
 
 /* Styling for Nav Bar desktop view - START */
 .navbar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  background-color: #333;
-  padding: 14px 20px;
-  color: white;
+display: flex;
+justify-content: center;
+align-items: center;
+position: relative;
+background-color: #333;
+padding: 14px 20px;
+color: white;
 }
 
 .navbar .menu {
-  position: absolute; 
-  right: 10px;
-  cursor: pointer;
-  display: none;
+position: absolute; 
+right: 10px;
+cursor: pointer;
+display: none;
 }
 
 .navbar .nav-items {
-  display: flex;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  gap: 20px; /* Space between nav items */
+display: flex;
+list-style-type: none;
+margin: 0;
+padding: 0;
+gap: 20px; /* Space between nav items */
 }
 
 .navbar .nav-items li {
-  padding: 8px 12px;
+padding: 8px 12px;
 }
 
 .navbar .nav-items li a {
-  color: white;
-  text-decoration: none;
+color: white;
+text-decoration: none;
 }
 /* Styling for Nav Bar desktop view - END */
 
 /* Styling for Nav Bar/Side Bar small view - END */
 .sidebar {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  top: 0;
-  right: 0;
-  background-color: #333;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
+height: 100%;
+width: 0;
+position: fixed;
+top: 0;
+right: 0;
+background-color: #333;
+overflow-x: hidden;
+transition: 0.5s;
+padding-top: 60px;
 }
 
 .sidebar a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 20px;
-  color: white;
-  display: block;
-  transition: 0.3s;
+padding: 8px 8px 8px 32px;
+text-decoration: none;
+font-size: 20px;
+color: white;
+display: block;
+transition: 0.3s;
 }
 
 .sidebar a:hover {
-  color: #f1f1f1;
+color: #f1f1f1;
 }
 
 .sidebar .closebtn {
-  position: absolute;
-  top: 20px;
-  right: 25px;
-  font-size: 24px;
+position: absolute;
+top: 20px;
+right: 25px;
+font-size: 24px;
 }
 /* Styling for Nav Bar/Side Bar small view - END */
 
 /* Styling for small screens - START */
 @media screen and (max-width: 768px) {
-  .navbar {
-      height: 50px; /* Make the navbar taller on small screens */
-      padding: 20px; 
-  }
+.navbar {
+    height: 50px; /* Make the navbar taller on small screens */
+    padding: 20px; 
+}
 
-  .navbar .nav-items {
-      display: none;
-  }
+.navbar .nav-items {
+    display: none;
+}
 
-  .navbar .menu {
-      display: block;
-      font-size: 40px; /* Increase the size of the hamburger icon */
-      cursor: pointer;
-  }
+.navbar .menu {
+    display: block;
+    font-size: 40px; /* Increase the size of the hamburger icon */
+    cursor: pointer;
+}
 
-    .contact-container {
-    width: 50%;
-  }
-  .home-body img {
-    /* max-width: 60%;  */
-    max-width: 90%; 
-    height: auto;
-  }
-  .gallery-container img.enlarged {
-    max-width: 100vw; 
-    max-height: 100vh; 
-    transform: none; 
-  }
-  .project-column-list ul {
-    column-count: 1; 
+  .contact-container {
+  width: 50%;
+}
+.home-body img {
+  /* max-width: 60%;  */
+  max-width: 90%; 
+  height: auto;
+}
+.gallery-container img.enlarged {
+  max-width: 100vw; 
+  max-height: 100vh; 
+  transform: none; 
+}
+.project-column-list ul {
+  column-count: 1; 
 }
 }
 
 @media (max-width: 600px) {
-  .contact-container {
-    padding-left: 5px;
-    padding-right: 5px;
-    margin: 0;
-    box-sizing: border-box;
-  }
-  .project1 {
-      flex-direction: column;
-      align-items: flex-start;
-  }
-  .project1 img {
-      width: 100%;
-      height: auto;
-  }
-  .project-description {
-      padding: 0;
-  }
-  .home-body img {
-    /* max-width: 80%;  */
-    max-width: 100%; 
+.contact-container {
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 0;
+  box-sizing: border-box;
+}
+.project1 {
+    flex-direction: column;
+    align-items: flex-start;
+}
+.project1 img {
+    width: 100%;
     height: auto;
-  }
+}
+.project-description {
+    padding: 0;
+}
+.home-body img {
+  /* max-width: 80%;  */
+  max-width: 100%; 
+  height: auto;
+}
 }
 
 /* Styling for small screens - END */
 
 /* Styling for home body - START */
 .home-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 60px; /*change if the button gets cut off*/
+display: flex;
+justify-content: center;
+align-items: center;
+padding-bottom: 60px; /*change if the button gets cut off*/
 }
 .home-body {
-  text-align: center;
-  width: 90%;
-  max-width: 800px;
-  padding: 20px;
-  margin: 20px;
-  border: 1px solid #ccc;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+text-align: center;
+width: 90%;
+max-width: 800px;
+padding: 20px;
+margin: 20px;
+border: 1px solid #ccc;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 .home-body img {
-  max-width: 40%; 
-  height: auto; 
-  object-fit: contain; 
+max-width: 40%; 
+height: auto; 
+object-fit: contain; 
 }
 .home-body button {
-  background-color: black;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  margin-top: 20px;
+background-color: black;
+color: white;
+border: none;
+padding: 10px 20px;
+font-size: 16px;
+cursor: pointer;
+margin-top: 20px;
 }
 .home-body button:hover {
-  opacity: 0.8;
+opacity: 0.8;
 }
 /* Styling for main body - END */
 
 /* Styling for Footer - START */
 .footer {
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 10px 0;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+background-color: #333;
+color: white;
+text-align: center;
+padding: 10px 0;
+position: fixed;
+bottom: 0;
+width: 100%;
 }
 
 .footer a {
-  color: white;
-  text-decoration: none;
-  margin: 0 10px;
-  font-size: 24px;
-  width: 24px;
-  height: 24px;
+color: white;
+text-decoration: none;
+margin: 0 10px;
+font-size: 24px;
+width: 24px;
+height: 24px;
 }
 
 .footer a:hover {
-  color: #f1f1f1;
+color: #f1f1f1;
 }
 /* Styling for Footer - END */
 
 /* Styling for Buttons - START */
 .black-button {
-  background-color: black;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 4px;
+background-color: black;
+color: white;
+border: none;
+padding: 10px 20px;
+text-align: center;
+text-decoration: none;
+font-size: 16px;
+cursor: pointer;
+border-radius: 4px;
 }
 .black-button:hover {
-  background-color: #333;
+background-color: #333;
 }
 /* Styling for Buttons - START */
 
 /* Styling for Projects Page - START */
 .project1-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 60px; /*change if the button gets cut off*/
+display: flex;
+justify-content: center;
+align-items: center;
+padding-bottom: 60px; /*change if the button gets cut off*/
 }
 .project1-container {
-  text-align: center;
-  width: 90%;
-  max-width: 800px;
-  padding: 20px;
-  margin: 20px;
-  border: 1px solid #ccc;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+text-align: center;
+width: 90%;
+max-width: 800px;
+padding: 20px;
+margin: 20px;
+border: 1px solid #ccc;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 .project1-container > p:first-of-type{
-  padding-bottom: 30px;
-  border-bottom: 3px solid #ddd;
-  
+padding-bottom: 30px;
+border-bottom: 3px solid #ddd;
+
 }
 
 .project1 {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  border-bottom: 3px solid #ddd;
+display: flex;
+align-items: center;
+margin-bottom: 20px;
+padding-bottom: 20px;
+border-bottom: 3px solid #ddd;
 }
 
 .project1 img {
-  max-width: 100%;
-  height: auto;
+max-width: 100%;
+height: auto;
 }
 
 .project-description {
-  flex: 1;
-  padding: 10px;
+flex: 1;
+padding: 10px;
 }
 
 .description-button {
-  margin-top: 10px;
+margin-top: 10px;
 }
 /* 
 .project1 img {
-  width: 150px;
-  height: auto;
-  margin-right: 40px;
+width: 150px;
+height: auto;
+margin-right: 40px;
 } 
 
 /* Styling for Projects Page - END */
@@ -270,109 +270,129 @@
 
 /* Styling for Project Template - START */
 .project-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 60px; /*change if the button gets cut off*/
+display: flex;
+justify-content: center;
+align-items: center;
+padding-bottom: 60px; /*change if the button gets cut off*/
 }
 .project-template {
-  text-align: center;
-  width: 90%;
-  max-width: 800px;
-  padding: 20px;
-  margin: 20px;
-  border: 1px solid #ccc;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+text-align: center;
+width: 90%;
+max-width: 800px;
+padding: 20px;
+margin: 20px;
+border: 1px solid #ccc;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 .project-template img {
-  max-width: 100%;
-  height: auto;
+max-width: 100%;
+height: auto;
 }
 .project-template button {
-  background-color: black;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  margin-top: 20px;
+background-color: black;
+color: white;
+border: none;
+padding: 10px 20px;
+font-size: 16px;
+cursor: pointer;
+margin-top: 20px;
 }
 .project-template button:hover {
-  opacity: 0.8;
+opacity: 0.8;
 }
 
 .project-process p{
-  text-align: justify;
-  padding: 10px;
-  /* padding: 3%; */
+text-align: justify;
+padding: 10px;
+/* padding: 3%; */
 }
 .project-process h4{
-  text-align: left;
+text-align: left;
 }
 
 .project-list ul{
-  list-style-type: square;
-  padding-left: 20px; /* Space between the bullets and text*/
+list-style-type: square;
+padding-left: 20px; /* Space between the bullets and text*/
 }
 .project-list li{
-  text-align: justify;
-  padding: 10px;
+text-align: justify;
+padding: 10px;
 }
 .project-column-list ul {
-    list-style-type: square; 
-    padding-left: 20px; 
-    column-count: 2; 
-    column-gap: 10px; 
+  list-style-type: square; 
+  padding-left: 20px; 
+  column-count: 2; 
+  column-gap: 10px; 
 }
 .project-column-list ul li {
-  text-align: justify;
-  padding: 10px;
+text-align: justify;
+padding: 10px;
 }
+
+.blur-effect {
+filter: blur(4px);
+border: 1px solid black;
+width: 475px;
+height: 400px;
+}
+
+.blur-effect-low {
+filter: blur(2px);
+border: 1px solid black;
+width: 475px;
+height: 400px;
+}
+
+.cover-img {
+width: 475px;
+height: 400px;
+}
+
 /* Styling for Project Template - END */
 
 /* Styling for Gallery - START */
 .gallery-container{
-  width: 90%;
-  margin: 10px auto 10px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-  grid-gap: 30px;
-  align-items: center;
+width: 90%;
+margin: 10px auto 10px;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+grid-gap: 30px;
+align-items: center;
 }
 .gallery-container img{
-  width: 100%;
-  cursor: pointer;
-  transition: transform 0.3s ease;
+width: 100%;
+cursor: pointer;
+transition: transform 0.3s ease;
 }
 .gallery-container img.enlarged {
-  transform: scale(2.0); 
-  z-index: 10; 
+transform: scale(2.0); 
+z-index: 10; 
 }
 /* image descriptions */
 .image-wrapper {
-  position: relative;
+position: relative;
 }
 .image-description {
-  display: none;
-  position: absolute;
-  bottom: 15px;
-  left: 15px;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  padding: 5px;
-  border-radius: 5px;
-  font-size: 12px;
+display: none;
+position: absolute;
+bottom: 15px;
+left: 15px;
+background-color: rgba(0, 0, 0, 0.5);
+color: white;
+padding: 5px;
+border-radius: 5px;
+font-size: 12px;
 }
 
 .image-wrapper:hover .image-description {
-  display: block;
+display: block;
 }
 #image-scaledown-1 {
-  width: 60%; 
+width: 60%; 
 }
 #image-scaleup-1 {
-  width: 150%; 
-  height: 125%;
+width: 150%; 
+height: 125%;
 }
 
 
@@ -380,150 +400,150 @@
 
 /* Styling for Resume Page - START */
 .resume-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 100%;
-  box-sizing: border-box;
-  padding-bottom: 60px; /*change if the button gets cut off*/
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+height: 100%;
+box-sizing: border-box;
+padding-bottom: 60px; /*change if the button gets cut off*/
 }
 .resume-container {
-  text-align: center;
-  width: 90%;
-  max-width: 800px;
-  padding: 20px;
-  margin: 20px;
-  border: 1px solid #ccc;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+text-align: center;
+width: 90%;
+max-width: 800px;
+padding: 20px;
+margin: 20px;
+border: 1px solid #ccc;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 iframe {
-  width: 100%;
-  height: 500px; /*80vh*/
-  border: 1px solid #ccc;
+width: 100%;
+height: 500px; /*80vh*/
+border: 1px solid #ccc;
 }
 /* Styling for Resume Page - END */
 
 /* Styling for About Me Page - START */
 .aboutme-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 60px; /*change if the button gets cut off*/
+display: flex;
+justify-content: center;
+align-items: center;
+padding-bottom: 60px; /*change if the button gets cut off*/
 }
 .aboutme-container {
-  text-align: center;
-  width: 90%;
-  max-width: 800px;
-  padding: 20px;
-  margin: 20px;
-  border: 1px solid #ccc;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+text-align: center;
+width: 90%;
+max-width: 800px;
+padding: 20px;
+margin: 20px;
+border: 1px solid #ccc;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 /* Styling for About Me Page - END */
 
 
 /* Styling for Contact Page - START */
 .contact-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 10px;
+
 }
 
 .contact-container {
-  max-width: 800px;
-  margin-top: 100px;
-  margin-bottom: 20px;  
-  padding-top: 20px;
-  padding-left: 40px;
-  padding-right: 40px;
-  padding-bottom: 20px;
-  text-align: center;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  width: 100%; /* Ensure it takes up full width on smaller screens */
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+max-width: 800px;
+margin-top: 100px;
+margin-bottom: 20px;  
+padding-top: 20px;
+padding-left: 40px;
+padding-right: 40px;
+padding-bottom: 20px;
+text-align: center;
+background-color: #fff;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+border-radius: 8px;
+border: 1px solid #ccc;
+width: 100%; /* Ensure it takes up full width on smaller screens */
+box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
 .contact-container h2 {
-  text-align: center;
-  margin-bottom: 20px;
+text-align: center;
+margin-bottom: 20px;
 }
 
 .contact-list {
-  list-style-type: none;
-  padding: 0;
-  
+list-style-type: none;
+padding: 0;
+
 }
 
 .contact-list li {
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
-  display: flex;
-  align-items: center;
+padding: 10px;
+border-bottom: 1px solid #ddd;
+display: flex;
+align-items: center;
 }
 
 .contact-list li:last-child {
-  border-bottom: none;
+border-bottom: none;
 }
 
 .contact-list li i {
-  margin-right: 10px;
-  color: #555;
+margin-right: 10px;
+color: #555;
 }
 
 .contact-list li span {
-  font-weight: bold;
+font-weight: bold;
 }
 
 .contact-description {
-  margin-left: 10px;
-  color: #777;
+margin-left: 10px;
+color: #777;
 } 
 
 /* Styling for Contact Page - END */
 
 /* Styling for in progress overlay card - START */
 .overlay {
-  display: none; /* Hidden by default */
-  position: fixed; 
-  top: 0; 
-  left: 0; 
-  width: 100%; 
-  height: 100%; 
-  background-color: rgba(0, 0, 0, 0.5); 
-  justify-content: center; 
-  align-items: center; 
-  z-index: 1000;
+display: none; /* Hidden by default */
+position: fixed; 
+top: 0; 
+left: 0; 
+width: 100%; 
+height: 100%; 
+background-color: rgba(0, 0, 0, 0.5); 
+justify-content: center; 
+align-items: center; 
+z-index: 1000;
 }
 
 .card {
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  position: relative;
-  text-align: center;
-  max-width: 60%;
+background-color: white;
+padding: 20px;
+border-radius: 8px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+position: relative;
+text-align: center;
+max-width: 60%;
 }
 
 .close-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 30px;
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
+position: absolute;
+top: 10px;
+right: 10px;
+font-size: 30px;
+width: 40px;
+height: 40px;
+cursor: pointer;
 }
 
 .close-btn:hover {
-  background-color: rgba(0, 0, 0, 0.1); 
-  border-radius: 50%; 
+background-color: rgba(0, 0, 0, 0.1); 
+border-radius: 50%; 
 }
 /* Styling for In progress overlay card - END */
