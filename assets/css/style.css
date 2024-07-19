@@ -506,6 +506,8 @@ z-index: 1;
   cursor: pointer;
   border-radius: 4px;
   background-color: white; 
+  position: relative; 
+  z-index: 10;
 }
 /* Styling for Resume Page - END */
 
