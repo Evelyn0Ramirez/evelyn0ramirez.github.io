@@ -423,14 +423,14 @@ display: flex;
 justify-content: center;
 align-items: center;
 flex-direction: column;
-width: 100%;
+height: 100%;
 box-sizing: border-box;
 padding-top: 80px;
 padding-bottom: 60px; /*change if the button gets cut off*/
 }
 .resume-container {
 text-align: center;
-width: 100%;
+width:90%;
 max-width: 800px; /* adjust to prevent stretching*/
 padding: 20px;
 border: 1px solid #ccc;
