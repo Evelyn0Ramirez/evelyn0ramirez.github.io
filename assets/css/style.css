@@ -117,6 +117,16 @@ font-size: 24px;
 .project-column-list ul {
   column-count: 1; 
 }
+
+.pdf-navigation {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.pdf-navigation span {
+  margin-left: 0;
+  margin-top: 10px;
+}
 }
 
 @media (max-width: 600px) {
@@ -143,6 +153,16 @@ font-size: 24px;
   max-width: 100%; 
   height: auto;
   z-index: 10;
+}
+
+.pdf-navigation {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.pdf-navigation span {
+  margin-left: 0;
+  margin-top: 5px;
 }
 }
 
@@ -425,8 +445,8 @@ align-items: center;
 flex-direction: column;
 height: 100%;
 box-sizing: border-box;
-padding-top: 80px;
-padding-bottom: 60px; /*change if the button gets cut off*/
+padding-top: 100px;
+padding-bottom: 80px; /*change if the button gets cut off*/
 }
 .resume-container {
 text-align: center;
@@ -463,6 +483,15 @@ z-index: 1;
 .pdf-navigation {
   text-align: center;
   margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pdf-navigation span {
+  display: inline-block;
+  margin-left: 10px;
 }
 
 #next-page{
