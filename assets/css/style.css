@@ -423,17 +423,16 @@ display: flex;
 justify-content: center;
 align-items: center;
 flex-direction: column;
-height: 100%;
+width: 100%;
 box-sizing: border-box;
 padding-top: 80px;
 padding-bottom: 60px; /*change if the button gets cut off*/
 }
 .resume-container {
 text-align: center;
-width: 90%;
-max-width: 800px;
+width: 100%;
+max-width: 800px; /* adjust to prevent stretching*/
 padding: 20px;
-margin: 20px;
 border: 1px solid #ccc;
 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -447,13 +446,17 @@ z-index: 1;
 
 #pdf-viewer-container {
   width: 100%;
-  height: 80vh; 
+  height: 0;
+  padding-top: 141.42%; /* Aspect ratio for A4 paper (210mm x 297mm) */
   position: relative;
 }
 
 #pdf-canvas {
   width: 100%;
   height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
   border: 1px solid #ccc;
 }
 
