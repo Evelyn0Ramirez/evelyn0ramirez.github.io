@@ -118,11 +118,9 @@ font-size: 24px;
   column-count: 1; 
 }
 
-/* #next-page, #prev-page {
-  padding: 20px 35px; 
-  font-size: 20px; 
-  margin: 15px;
-} */
+#next-page{
+  margin-right: 60px;
+}
 
 }
 
