@@ -118,10 +118,10 @@ font-size: 24px;
   column-count: 1; 
 }
 
-#next-pages, #prev-pages {
+#next-page, #prev-page {
   padding: 20px 35px; 
   font-size: 20px; 
-  margin: 20px;
+  margin: 15px;
 }
 
 }
