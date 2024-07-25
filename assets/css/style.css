@@ -82,6 +82,14 @@ font-size: 24px;
 /* Styling for Nav Bar/Side Bar small view - END */
 
 /* Styling for small screens - START */
+@media screen and (max-width: 800px) {
+  .column {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
 @media screen and (max-width: 768px) {
 .navbar {
     height: 50px; /* Make the navbar taller on small screens */
@@ -118,10 +126,6 @@ font-size: 24px;
   column-count: 1; 
 }
 
-#next-page{
-  margin-right: 60px;
-}
-
 }
 
 @media (max-width: 600px) {
@@ -148,6 +152,12 @@ font-size: 24px;
   max-width: 100%; 
   height: auto;
   z-index: 10;
+}
+
+.column {
+  -ms-flex: 100%;
+  flex: 100%;
+  max-width: 100%;
 }
 }
 
@@ -537,7 +547,63 @@ margin: 20px;
 border: 1px solid #ccc;
 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
+.about-image-first, .about-text-first {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding: 20px;
+}
+
+.about-image {
+  flex: 0 0 30%;
+  max-width: 30%;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+}
+
+.about-text {
+  flex: 0 0 70%; 
+  max-width: 70%; 
+  padding: 0 20px;
+}
+
+.about-gallery-intro p{
+  text-align: justify;
+  padding: 10px;
+  }
+  .about-gallery-intro h3{
+  padding: 10px;
+  text-align: left;
+  }
+
+/* About me photo gallery */
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+.column {
+  -ms-flex: 33.33%; /* IE10 */
+  flex: 33.33%;
+  max-width: 33.33%;
+  padding: 0 4px;
+}
+
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
 /* Styling for About Me Page - END */
+
 
 
 /* Styling for Contact Page - START */
