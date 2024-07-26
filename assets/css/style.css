@@ -126,6 +126,17 @@ font-size: 24px;
   column-count: 1; 
 }
 
+.about-image-first, .about-text-first {
+  flex-direction: column;
+}
+
+.about-image, 
+.about-text {
+  flex: 0 0 100%;
+  max-width: 100%;
+  padding: 10px;
+}
+
 }
 
 @media (max-width: 600px) {
@@ -573,6 +584,7 @@ box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 .about-image {
   flex: 0 0 30%;
   max-width: 30%;
+  padding: 10px;
 }
 
 .about-image img {
