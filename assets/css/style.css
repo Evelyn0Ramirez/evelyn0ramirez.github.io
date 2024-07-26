@@ -263,7 +263,7 @@ box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 .project1-container > p:first-of-type{
 padding-bottom: 30px;
-border-bottom: 3px solid #ddd;
+border-bottom: 3px solid #319BA0;
 
 }
 
@@ -272,7 +272,7 @@ display: flex;
 align-items: center;
 margin-bottom: 20px;
 padding-bottom: 20px;
-border-bottom: 3px solid #ddd;
+border-bottom: 3px solid #319BA0;
 }
 
 .project1 img {
@@ -549,11 +549,24 @@ border: 1px solid #ccc;
 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.aboutme-intro-img {
+  max-width: 40%; 
+  height: auto; 
+  object-fit: contain; 
+  z-index: 10;
+  padding: 20px;
+  margin-bottom: 20px;
+  }
+
+   .aboutme-container > p:nth-of-type(2){
+    border-bottom: 3px solid #319BA0;
+    }
+
 .about-image-first, .about-text-first {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 3px solid #319BA0;
   padding: 20px;
 }
 
@@ -646,7 +659,7 @@ padding: 0;
 
 .contact-list li {
 padding: 10px;
-border-bottom: 1px solid #ddd;
+border-bottom: 1px solid #319BA0;
 display: flex;
 align-items: center;
 }
