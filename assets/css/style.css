@@ -88,6 +88,9 @@ font-size: 24px;
     flex: 50%;
     max-width: 50%;
   }
+  .about-image-first, .about-text-first {
+    flex: 0 0 100%;
+  }
 }
 
 @media screen and (max-width: 768px) {
