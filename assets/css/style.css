@@ -272,6 +272,7 @@ padding: 20px;
 margin: 20px;
 border: 1px solid #ccc;
 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+background-color: white;
 }
 .project1-container > p:first-of-type{
 padding-bottom: 30px;
@@ -328,6 +329,7 @@ margin: 20px;
 border: 1px solid #ccc;
 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
 .project-template img {
 max-width: 100%;
 height: auto;
@@ -550,6 +552,7 @@ justify-content: center;
 align-items: center;
 padding-top: 80px;
 padding-bottom: 60px; /*change if the button gets cut off*/
+
 }
 .aboutme-container {
 text-align: center;
@@ -562,49 +565,62 @@ box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .aboutme-intro-img {
-  max-width: 40%; 
-  height: auto; 
-  object-fit: contain; 
-  z-index: 10;
-  padding: 20px;
-  margin-bottom: 20px;
+    /* max-width: 60%;  */
+    max-width: 40%; 
+    height: auto;
+    z-index: 10;
+    padding-bottom: 20px;
   }
 
-   .aboutme-container > p:nth-of-type(2){
-    border-bottom: 3px solid #319BA0;
+  .aboutme-content p{
+    text-align: justify;
+    padding: 10px;
+    padding-bottom: 20px;
+    }
+    .aboutme-content h2{
+      padding-top: 15px;
+    text-align: center;
+    border-top: 3px solid #319BA0;
     }
 
-.about-image-first, .about-text-first {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  border-bottom: 3px solid #319BA0;
-  padding: 20px;
-}
+    .gallery-aboutme-container{
+      width: 90%;
+      margin: 10px auto 10px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+      grid-gap: 30px;
+      align-items: center;
+      }
+      .gallery-aboutme-container img{
+      width: 100%;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      z-index: 10;
+      }
 
-.about-image {
-  flex: 0 0 30%;
-  max-width: 30%;
-}
+      #aboutme-image-sizedown{
+        width: 40%; /* or a specific pixel value like 200px */
+        height: auto; /* Maintains aspect ratio */
+        cursor: pointer;
+        transition: transform 0.3s ease;
+        z-index: 10;
+      }
+     
+      .image-aboutme-wrapper {
+      position: relative;
+      }
 
-.about-image img {
-  width: 100%;
-  height: auto;
-}
-
-.about-text {
-  flex: 0 0 70%; 
-  max-width: 70%; 
-  padding: 0 20px;
-}
-
+      .about-gallery-intro{
+        border-top: 3px solid #319BA0;
+      }
 .about-gallery-intro p{
   text-align: justify;
   padding: 10px;
   }
   .about-gallery-intro h3{
   padding: 10px;
-  text-align: left;
+  text-align: center;
+  padding-top: 20px;
   }
 
 /* About me photo gallery */
