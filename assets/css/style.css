@@ -396,6 +396,21 @@ height: 400px;
 z-index: 10;
 }
 
+/* Styling for Dashboards - START */
+.entire-dashboard-img {
+  width: 100%;
+  /* max-width: 800px; */
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px;
+  
+  /*width="600";
+  height="400";*/
+}
+/* Styling for Dashboards - END */
+
 /* Styling for Project Template - END */
 
 /* Styling for Gallery - START */
