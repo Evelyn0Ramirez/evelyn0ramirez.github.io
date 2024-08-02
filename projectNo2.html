@@ -48,6 +48,7 @@
               It is intended for internal use only and should not be shared with individuals outside the organization without prior authorization.
               As a result, I will refrain from presenting actual results derived from the data and instead I will concentrate on my overall process 
               in designing and creating the dashboards.*</p> </br>
+              <p>**UPDATE: After review, permisson was granted to showcase the dashboards after some edits to remove any identifying information.**</p> </br>
               <div class="project-process">
                 <h4>Objective:</h4>
                 <p>The objective of these dashboards is to provide an overview of the audit process timeline and identify any bottlenecks within the process for 
@@ -71,13 +72,14 @@
                   Preprocessing of the data was done to ensure data consistency, completeness, and quality.</p>
                 <h4>Data Connection:</h4>
                 <p>Imported the Excel Spreadsheet into Power BI and small scale data transformation was done to verify once more that the data is ready to use.
-                  Another seperate Excel Spreadsheet imported into Power BI was a file containing federal holidays.
+                  Originally imported another Excel file containing federal holidays into power BI but was later replaced with a table with that information.
                 </p>
                 <h4>Data Modeling:</h4>
                 <div class="project-list">
                   <ul>
                       <li>Created a calendar table for fiscal year that contains dates using DAX. The calculation used a self-decided start date and an end date set 
                         to the latest present date.</li>
+                      <li>Created a table of Federal Holidays using the Enter Data function by pasting data from an Excel file containing Holidays.</li>
                       <li>Date hierarchy was adjusted to accommodate our desired fiscal year which starts in July as opposed to the default value January. 
                         This allowed us to drill down the hierarchy more accurately (Year -> Quarter -> Month -> Day).</li>
                       <li>Relationships were created between the calendar table on the date field and the start date field of the 3 separate audit types.</li>
@@ -113,8 +115,18 @@
                       <li>I applied ISD branding elements consistently throughout the dashboards, including using the correct color palette for visual 
                         elements such as charts and headers, and ensuring appropriate placement of these elements.</li>
                       <li>Worked on visual placements to standardize sizes and alignment, minimizing whitespace and enhancing overall visual coherence.</li>
-                      <li>Incorporated a caveats page to ensuring transparency and clarity in data interpretation.</li>
-                  </ul>
+                      <li>Incorporated caveat pages to ensuring transparency and clarity in data interpretation.</li>
+                      <li>Consolidated the three seperate dashboard pages into a single page using bookmarks to control the visibility of each audit type's view. 
+                        The Selection pane was used to select what elements are visible and what is hidden andn then the Bookmarks pane was used to capture 
+                        and save the current state of a report page. </li>
+                    </ul>
+              </div>
+              <div class="gallery-container">
+                <div class="image-wrapper">
+                  <img src="assets/images/projectNo2/BookmarksNavigator.png" alt="Selection and Bookmark Panes">
+                  <div class="image-description">Panes used to select what is in view and what is hidden to create my bookmarks.</div>
+                </div>
+                <p>*Hover over an image (desktop) or tap on an image (mobile) to view it's attached description.</br></br>*Select an image to open in a new tab to inspect further (desktop only).</p>
               </div>
                 <h4>Adding Interactivity:</h4>
                 <div class="project-list">
@@ -126,6 +138,8 @@
                         A tooltip was then added to each visual to provide an explanation of which columns were used for each calculation. This provides clarity 
                         and is the most efficient way for a user to access this information and confirm it's accuracy. Tooltips were then hidden and only 
                         accessed in the editing mode.</li>
+                        <li>I added bookmark navigator buttons that use the bookmarks I created, allowing users to switch between different audit types. This provides a 
+                          more unified and interactive experience.</li>
                  </ul>
               </div>
               <div class="gallery-container">
@@ -141,6 +155,12 @@
                   and usability for end-users was extremly important.</p>
                 <h4>Publishing:</h4>
                 <p>Was it published? YES! <i class="fa-regular fa-face-smile-beam"></i></p></br>
+                  <div class="entire-dashboard-img">
+                    <img src="assets/images/projectNo2/InternalAuditsDashboard.png" alt="">
+                    <img src="assets/images/projectNo2/ExternalAuditsDashboard.png" alt="">
+                    <img src="assets/images/projectNo2/ACAuditsDashboard.png" alt="">
+                  </div>
+                
                 
             </div>
             <button class="black-button" onclick="window.location.href='projects.html'">Return to Projects</button>
